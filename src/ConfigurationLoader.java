@@ -7,16 +7,14 @@ public class ConfigurationLoader {
 
     HashMap<String, ArrayList<String>> attributes;
     ArrayList<Character> characters;
-    String fileName;
 
     public ConfigurationLoader(String fileName) {
-        this.fileName = fileName;
         attributes = new HashMap<String, ArrayList<String>>();
         characters = new ArrayList<>();
-        loadFileContents();
+        loadFileContents(fileName);
     }
 
-    private void loadFileContents() {
+    private void loadFileContents(String fileName) {
         File file = new File(fileName);
         BufferedReader br = null;
         try {
@@ -43,10 +41,20 @@ public class ConfigurationLoader {
     }
 
     private void loadCharacters(BufferedReader br) throws IOException {
-
         // skip first empty line
         String line = br.readLine();
-        String hairLength = null, glasses = null, facialHair = null, eyeColor = null, pimples = null, hat = null, hairColor = null, noseShape = null, faceShape = null, name = null;
+
+        // Attributes variables
+        String hairLength = null;
+        String glasses = null;
+        String facialHair = null;
+        String eyeColor = null;
+        String pimples = null;
+        String hat = null;
+        String hairColor = null;
+        String noseShape = null;
+        String faceShape = null;
+        String name;
 
         while (line != null) {
             name = br.readLine();
@@ -74,7 +82,7 @@ public class ConfigurationLoader {
                 }
             }
             characters.add(new Character(name, hairLength, glasses, facialHair, eyeColor, pimples, hat, hairColor, noseShape, faceShape));
-            // skip empty line between characters
+            // skip empty line between characters' data
             line = br.readLine();
         }
     }

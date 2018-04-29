@@ -16,8 +16,6 @@ public class Guess {
         Person
     }
 
-    ;
-
     /**
      * Guess type.
      */

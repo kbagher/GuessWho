@@ -10,6 +10,7 @@ public class Character {
     private String noseShape;
     private String faceShape;
     private String name;
+    private boolean isGuessed;
 
     public Character(String name, String hairLength, String glasses, String facialHair, String eyeColor, String pimples, String hat, String hairColor, String noseShape, String faceShape) {
         this.hairLength = hairLength;
@@ -22,6 +23,7 @@ public class Character {
         this.noseShape = noseShape;
         this.faceShape = faceShape;
         this.name = name;
+        this.isGuessed = false;
     }
 
     public String getAttribute(String attributeName) {
@@ -49,5 +51,13 @@ public class Character {
             default:
                 return "Undefined attribute";
         }
+    }
+
+    public boolean isGuessed() {
+        return isGuessed;
+    }
+
+    public void setGuessed() {
+        isGuessed = true;
     }
 }
