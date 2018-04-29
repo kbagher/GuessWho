@@ -13,9 +13,21 @@ import java.util.Random;
  */
 public class RandomGuessPlayer implements Player {
 
+    /**
+     * chosen character object
+     */
     private Character chosenCharacter;
+    /**
+     * All available attributes loaded from the game configuration
+     */
     private HashMap<String, ArrayList<String>> attributes;
+    /**
+     * All available characters loaded from the game configuration
+     */
     private ArrayList<Character> characters;
+    /**
+     * Game configuration loader
+     */
     private ConfigurationLoader loader;
 
     /**
@@ -125,7 +137,7 @@ public class RandomGuessPlayer implements Player {
             }
         }
         return false;
-    } // end of receiveAnswer()
+    }
 
 
     /**
@@ -170,24 +182,44 @@ public class RandomGuessPlayer implements Player {
     private boolean isGuessRedundant(ArrayList<Character> characters, String attributeName, String attributeValue) {
         /*
         loop through all remaining characters to check for
-        any redundant attribute guess.
+        any redundant attribute guess that has been maade before.
+        </br>
+        Unique guess (question) happens if there at least one match between the given (attribute, value) pair and the remaining
+        characters. if no match found, it will be considered a redundant guessing (question)
         * */
         for (Character character : characters) {
             if (character.getAttribute(attributeName).equals(attributeValue))
-                return false; // attribute guess is redundant
+                return false; // attribute guess is not redundant
         }
-        return true; // guess is not redundant
+        return true; // guess attribute is redundant
     }
 
+    /**
+     * Return all remaining characters which have not yet been guessed nor matched
+     * any of the (attribute,valu) pair asked in the the questions
+     *
+     * @return remaining not-guessed characters
+     */
     private ArrayList<Character> getRemainingCharacters() {
+        /**
+         * check all characters weather they have been marked as guessed or eliminated
+         * and return them as a list
+         */
         ArrayList<Character> tmpCharacters = new ArrayList<>();
         for (Character ch : characters) {
             if (!ch.isGuessed())
-                tmpCharacters.add(ch);
+                tmpCharacters.add(ch); // add the character to the not-guessed characters
         }
-        return tmpCharacters;
+        return tmpCharacters; // list of remaining not-guessed characters
     }
 
+    /**
+     * Get the character object for the specified name
+     *
+     * @param name character name (ID)
+     *
+     * @return character object for the given name
+     */
     private Character getCharacterByName(String name) {
         for (Character ch : characters) {
             if (ch.getAttribute("name").equals(name)) {
@@ -197,4 +229,4 @@ public class RandomGuessPlayer implements Player {
         return null; // character not found
     }
 
-} // end of class RandomGuessPlayer
+}
