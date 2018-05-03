@@ -96,7 +96,7 @@ public class RandomGuessPlayer implements Player {
                 return true;
             }
         } else { // Character guess
-            System.out.println("Guessing Character");
+//            System.out.println("Guessing Character");
             boolean characterGuess = chosenCharacter.getAttribute("name").equals(currGuess.getValue());
             if (characterGuess) {
                 // character guess is correct
@@ -118,7 +118,7 @@ public class RandomGuessPlayer implements Player {
             } else {
                 for (Character character : getRemainingCharacters()) {
                     boolean attributeMatch = character.getAttribute(currGuess.getAttribute()).equals(currGuess.getValue());
-                    if (attributeMatch)
+                    if (attributeMatch  && character != chosenCharacter)
                         character.setGuessed(); // guessed character
                 }
             }

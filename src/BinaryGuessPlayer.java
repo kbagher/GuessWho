@@ -82,7 +82,7 @@ public class BinaryGuessPlayer implements Player {
         System.out.println("Middle: " + attributeIndex);
 
         if (attributeIndex == -1) {
-            System.out.println("NOOOOOOOOOOOOOOOO");
+            System.out.println("OOPPS");
         }
 
         return new Guess(Guess.GuessType.Attribute, attributesCount[attributeIndex].getAttribute(), attributesCount[attributeIndex].getValue());
@@ -121,7 +121,7 @@ public class BinaryGuessPlayer implements Player {
             } else {
                 for (Character character : getRemainingCharacters()) {
                     boolean attributeMatch = character.getAttribute(currGuess.getAttribute()).equals(currGuess.getValue());
-                    if (attributeMatch)
+                    if (attributeMatch && character != chosenCharacter)
                         character.setGuessed(); // guessed character
                 }
             }
@@ -153,6 +153,7 @@ public class BinaryGuessPlayer implements Player {
      */
     private int binarySearch(int remainingCharacters, AttributeValuePair[] attributesCount) {
         int targetValue = remainingCharacters / 2;
+        System.out.println("search for " + targetValue);
         int lowerValue = 0;
         int higherValue = attributesCount.length - 1;
 
@@ -170,25 +171,9 @@ public class BinaryGuessPlayer implements Player {
         return -1; // no value found
     }
 
-
-    private boolean isGuessRedundant(ArrayList<Character> characters, String attributeName, String attributeValue) {
-        /*
-        loop through all remaining characters to check for
-        any redundant attribute guess that has been maade before.
-        </br>
-        Unique guess (question) happens if there at least one match between the given (attribute, value) pair and the remaining
-        characters. if no match found, it will be considered a redundant guessing (question)
-        * */
-        for (Character character : characters) {
-            if (character.getAttribute(attributeName).equals(attributeValue))
-                return false; // attribute guess is not redundant
-        }
-        return true; // guess attribute is redundant
-    }
-
     /**
      * Return all remaining characters which have not yet been guessed nor matched
-     * any of the (attribute,valu) pair asked in the the questions
+     * any of the (attribute,value) pair asked in the the questions
      *
      * @return remaining not-guessed characters
      */
