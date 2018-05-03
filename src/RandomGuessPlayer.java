@@ -228,5 +228,4 @@ public class RandomGuessPlayer implements Player {
         }
         return null; // character not found
     }
-
 }
