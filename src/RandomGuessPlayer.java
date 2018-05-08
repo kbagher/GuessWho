@@ -113,13 +113,14 @@ public class RandomGuessPlayer implements Player {
                 for (Character character : getRemainingCharacters()) {
                     boolean attributeMatch = character.getAttribute(currGuess.getAttribute()).equals(currGuess.getValue());
                     if (!attributeMatch)
-                        character.setGuessed(); // guessed character
+                        character.setGuessed(); //eliminate all non matching attribute
                 }
             } else {
                 for (Character character : getRemainingCharacters()) {
                     boolean attributeMatch = character.getAttribute(currGuess.getAttribute()).equals(currGuess.getValue());
+                    // avoid eliminating the chosen character
                     if (attributeMatch  && character != chosenCharacter)
-                        character.setGuessed(); // guessed character
+                        character.setGuessed(); // eliminate all matching attribute
                 }
             }
         } else { // character guess
@@ -133,7 +134,7 @@ public class RandomGuessPlayer implements Player {
             for (Character character : getRemainingCharacters()) {
                 boolean characterMatch = character.getAttribute("name").equals(currGuess.getValue());
                 if (characterMatch)
-                    character.setGuessed(); // guessed character
+                    character.setGuessed(); // incorrectly guessed character
             }
         }
         return false;

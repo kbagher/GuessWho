@@ -72,14 +72,14 @@ public class BinaryGuessPlayer implements Player {
 
         AttributeValuePair[] attributesCount = countAndSortAttributes(remainingCharacters);
 
-        for (int x = 0; x < attributesCount.length; x++) {
-            System.out.print(attributesCount[x].getCounter() + " ");
-        }
-        System.out.println();
+//        for (int x = 0; x < attributesCount.length; x++) {
+//            System.out.print(attributesCount[x].getCounter() + " ");
+//        }
+//        System.out.println();
 
         int attributeIndex = binarySearch(remainingCharacters.size(), attributesCount);
 
-        System.out.println("Middle: " + attributeIndex);
+//        System.out.println("Middle: " + attributeIndex);
 
         if (attributeIndex == -1) {
             System.out.println("OOPPS");
@@ -116,13 +116,14 @@ public class BinaryGuessPlayer implements Player {
                 for (Character character : getRemainingCharacters()) {
                     boolean attributeMatch = character.getAttribute(currGuess.getAttribute()).equals(currGuess.getValue());
                     if (!attributeMatch)
-                        character.setGuessed(); // guessed character
+                        character.setGuessed(); // eliminate all non matching attribute
                 }
             } else {
                 for (Character character : getRemainingCharacters()) {
                     boolean attributeMatch = character.getAttribute(currGuess.getAttribute()).equals(currGuess.getValue());
+                    // avoid eliminating the chosen character
                     if (attributeMatch && character != chosenCharacter)
-                        character.setGuessed(); // guessed character
+                        character.setGuessed(); // eliminate all matching attribute
                 }
             }
         } else { // character guess
@@ -136,7 +137,7 @@ public class BinaryGuessPlayer implements Player {
             for (Character character : getRemainingCharacters()) {
                 boolean characterMatch = character.getAttribute("name").equals(currGuess.getValue());
                 if (characterMatch)
-                    character.setGuessed(); // guessed character
+                    character.setGuessed(); // incorrectly guessed character
             }
         }
         return false;
