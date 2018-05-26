@@ -3,17 +3,35 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+
+/**
+ * Game configuration loader
+ */
 public class ConfigurationLoader {
 
+    /**
+     * Loaded attributes with their values
+     */
     HashMap<String, ArrayList<String>> attributes;
+    /**
+     * Loaded Characters
+     */
     ArrayList<Character> characters;
 
+    /**
+     * Creates object and loads configuration file
+     * @param fileName game configuration file
+     */
     public ConfigurationLoader(String fileName) {
         attributes = new HashMap<String, ArrayList<String>>();
         characters = new ArrayList<>();
         loadFileContents(fileName);
     }
 
+    /**
+     * loads file contents
+     * @param fileName file name
+     */
     private void loadFileContents(String fileName) {
         File file = new File(fileName);
         BufferedReader br = null;
@@ -28,6 +46,11 @@ public class ConfigurationLoader {
         }
     }
 
+    /**
+     * Loads attributes using the loaded file buffer reader
+     * @param br file buffer reader
+     * @throws IOException
+     */
     private void loadAttributes(BufferedReader br) throws IOException {
         for (int line = 0; line < 9; line++) {
             String[] attribute = br.readLine().split(" ");
@@ -40,6 +63,11 @@ public class ConfigurationLoader {
         }
     }
 
+    /**
+     * Loads characters using the loaded file buffer reader
+     * @param br file buffer reader
+     * @throws IOException
+     */
     private void loadCharacters(BufferedReader br) throws IOException {
         // skip first empty line
         String line = br.readLine();
@@ -87,10 +115,18 @@ public class ConfigurationLoader {
         }
     }
 
+    /**
+     * Get loaded attributes
+     * @return game attributes
+     */
     public HashMap<String, ArrayList<String>> getAttributes() {
         return attributes;
     }
 
+    /**
+     * Get loaded characters
+     * @return game characters
+     */
     public ArrayList<Character> getCharacters() {
         return characters;
     }

@@ -113,14 +113,14 @@ public class RandomGuessPlayer implements Player {
                 for (Character character : getRemainingCharacters()) {
                     boolean attributeMatch = character.getAttribute(currGuess.getAttribute()).equals(currGuess.getValue());
                     if (!attributeMatch)
-                        character.setGuessed(); //eliminate all non matching attribute
+                        character.setFlipped(); //eliminate all non matching attribute
                 }
             } else {
                 for (Character character : getRemainingCharacters()) {
                     boolean attributeMatch = character.getAttribute(currGuess.getAttribute()).equals(currGuess.getValue());
                     // avoid eliminating the chosen character
                     if (attributeMatch  && character != chosenCharacter)
-                        character.setGuessed(); // eliminate all matching attribute
+                        character.setFlipped(); // eliminate all matching attribute
                 }
             }
         } else { // character guess
@@ -134,7 +134,7 @@ public class RandomGuessPlayer implements Player {
             for (Character character : getRemainingCharacters()) {
                 boolean characterMatch = character.getAttribute("name").equals(currGuess.getValue());
                 if (characterMatch)
-                    character.setGuessed(); // incorrectly guessed character
+                    character.setFlipped(); // incorrectly guessed character
             }
         }
         return false;
@@ -208,7 +208,7 @@ public class RandomGuessPlayer implements Player {
          */
         ArrayList<Character> tmpCharacters = new ArrayList<>();
         for (Character ch : characters) {
-            if (!ch.isGuessed())
+            if (!ch.isFlipped())
                 tmpCharacters.add(ch); // add the character to the not-guessed characters
         }
         return tmpCharacters; // list of remaining not-guessed characters
