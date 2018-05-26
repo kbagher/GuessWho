@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc0ae297-2b62-447f-b032-694b69486b78" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms_cosc2123_1810_assignment_2/AttributeValuePair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/algorithms_cosc2123_1810_assignment_2/AttributeValuePair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms_cosc2123_1810_assignment_2/BinaryGuessPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/algorithms_cosc2123_1810_assignment_2/BinaryGuessPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms_cosc2123_1810_assignment_2/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/algorithms_cosc2123_1810_assignment_2/Character.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms_cosc2123_1810_assignment_2/ConfigurationLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/algorithms_cosc2123_1810_assignment_2/ConfigurationLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms_cosc2123_1810_assignment_2/RandomGuessPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/algorithms_cosc2123_1810_assignment_2/RandomGuessPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms_cosc2123_1810_assignment_2/game2.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms_cosc2123_1810_assignment_2/game3.chosen" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/algorithms_cosc2123_1810_assignment_2/game3.chosen" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AttributeValuePair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AttributeValuePair.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BinaryGuessPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinaryGuessPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConfigurationLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConfigurationLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RandomGuessPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RandomGuessPlayer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +20,8 @@
       <file leaf-file-name="BinaryGuessPlayer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BinaryGuessPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="207" column="41" selection-start-line="207" selection-start-column="41" selection-end-line="207" selection-end-column="41" />
+            <state relative-caret-position="-191">
+              <caret line="230" column="95" selection-start-line="230" selection-start-column="95" selection-end-line="230" selection-end-column="95" />
             </state>
           </provider>
         </entry>
@@ -91,7 +79,7 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="803" />
@@ -241,12 +229,12 @@
       <workItem from="1525338877196" duration="1737000" />
       <workItem from="1525746003914" duration="48000" />
       <workItem from="1525746314824" duration="5000" />
-      <workItem from="1527320411277" duration="2248000" />
+      <workItem from="1527320411277" duration="3311000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53053000" />
+    <option name="totallyTimeSpent" value="54116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="803" extended-state="6" />
@@ -489,8 +477,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BinaryGuessPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="207" column="41" selection-start-line="207" selection-start-column="41" selection-end-line="207" selection-end-column="41" />
+        <state relative-caret-position="-191">
+          <caret line="230" column="95" selection-start-line="230" selection-start-column="95" selection-end-line="230" selection-end-column="95" />
         </state>
       </provider>
     </entry>

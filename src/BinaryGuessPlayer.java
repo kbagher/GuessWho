@@ -192,22 +192,32 @@ public class BinaryGuessPlayer implements Player {
     }
 
 
+    /**
+     * Count attribute's occurrence of the giving characters and sort in an ascendant way
+     * @param characters characters to count attribute's occurrence for
+     * @return AttributesValue pairs with occurrence in the giving characters list
+     */
     private AttributeValuePair[] countAndSortAttributes(ArrayList<Character> characters) {
         HashMap<String, Integer> attributeMapCount = countAttributeOccurrence(characters);
         return sortAttributeMap(attributeMapCount);
     }
 
 
-    private AttributeValuePair[] sortAttributeMap(HashMap<String, Integer> counter) {
+    /**
+     * Sort attributes by their occurrence
+     * @param attributesCounter attributes value occurrence
+     * @return ascendant sorted attributes pair
+     */
+    private AttributeValuePair[] sortAttributeMap(HashMap<String, Integer> attributesCounter) {
 
-        AttributeValuePair[] pair = new AttributeValuePair[counter.size()];
+        AttributeValuePair[] pair = new AttributeValuePair[attributesCounter.size()];
 
         // convert hash into ArrayList
         int x = 0;
-        for (String key : counter.keySet()) {
+        for (String key : attributesCounter.keySet()) {
             String attribute = key.split(" ")[0];
             String value = key.split(" ")[1];
-            pair[x] = new AttributeValuePair(attribute, value, counter.get(key));
+            pair[x] = new AttributeValuePair(attribute, value, attributesCounter.get(key));
             x++;
         }
         Arrays.sort(pair);
@@ -215,6 +225,11 @@ public class BinaryGuessPlayer implements Player {
     }
 
 
+    /**
+     * Count attributes occurrence for the giving characters
+     * @param characters the characters list to count the attribute's occurence for
+     * @return attributes and value pair with the total occurence in the giving characters list
+     */
     private HashMap<String, Integer> countAttributeOccurrence(ArrayList<Character> characters) {
 
         HashMap<String, Integer> counter = new HashMap<>();
